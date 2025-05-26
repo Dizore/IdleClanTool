@@ -10,7 +10,7 @@ export default function App() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(\`https://query.idleclans.com/api/players?username=\${playerName}\`);
+      const res = await fetch(`https://query.idleclans.com/api/players?username=${playerName}`);
       if (!res.ok) throw new Error("Fehler beim Laden der Daten");
       const json = await res.json();
       setPlayerData(json?.data?.[0] || null);
